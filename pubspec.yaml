@@ -103,21 +103,21 @@ flutter:
           weight: 400
     - family: Poppins
       fonts:
-        - asset: asserts/fonts/poppins/Poppins-Thin.ttf
+        - asset: assets/fonts/poppins/Poppins-Thin.ttf
           weight: 100
-        - asset: asserts/fonts/poppins/Poppins-ExtraLight.ttf
+        - asset: assets/fonts/poppins/Poppins-ExtraLight.ttf
           weight: 200
-        - asset: asserts/fonts/poppins/Poppins-Light.ttf
+        - asset: assets/fonts/poppins/Poppins-Light.ttf
           weight: 300
-        - asset: asserts/fonts/poppins/Poppins-Regular.ttf
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
           weight: 400
-        - asset: asserts/fonts/poppins/Poppins-Medium.ttf
+        - asset: assets/fonts/poppins/Poppins-Medium.ttf
           weight: 500
-        - asset: asserts/fonts/poppins/Poppins-SemiBold.ttf
+        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
           weight: 600
-        - asset: asserts/fonts/poppins/Poppins-Bold.ttf
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
           weight: 700
-        - asset: asserts/fonts/poppins/Poppins-ExtraBold.ttf
+        - asset: assets/fonts/poppins/Poppins-ExtraBold.ttf
           weight: 800
   #
   # For details regarding fonts from package dependencies,
