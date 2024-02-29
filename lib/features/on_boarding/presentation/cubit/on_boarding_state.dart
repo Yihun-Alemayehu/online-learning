@@ -7,13 +7,13 @@ abstract class OnBoardingState extends Equatable {
   List<Object> get props => [];
 }
 
-class OnBoardingInitial extends OnBoardingState {}
+class OnBoardingInitialState extends OnBoardingState {}
 
 class CachingFirstTimerState extends OnBoardingState {}
 
-class CheckingIfUserIsFirstTimer extends OnBoardingState {}
+class CheckingIfUserIsFirstTimerState extends OnBoardingState {}
 
-class UserCached extends OnBoardingState {}
+class UserCachedState extends OnBoardingState {}
 
 class OnBoardingStatusState extends OnBoardingState {
   final bool isFirstTimer;
