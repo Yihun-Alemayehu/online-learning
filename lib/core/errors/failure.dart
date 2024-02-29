@@ -4,14 +4,14 @@ import 'package:online_learning/core/errors/exception.dart';
 
 abstract class Failure extends Equatable {
   final String message;
-  final String statusCode;
+  final dynamic statusCode;
 
   const Failure({required this.message, required this.statusCode});
 
   String getMessage() => '$statusCode Error: $message';
 
   @override
-  List<String> get props => [message, statusCode];
+  List<dynamic> get props => [message, statusCode];
 }
 
 class CacheFailure extends Failure {
