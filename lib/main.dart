@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:online_learning/core/res/colors.dart';
 import 'package:online_learning/core/res/fonts.dart';
+import 'package:online_learning/core/services/injection_container.dart';
 import 'package:online_learning/core/services/routes.dart';
-import 'package:online_learning/features/on_boarding/presentation/screens/on_boarding_screen.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await init();
   runApp(const MyApp());
 }
 
