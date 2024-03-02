@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:online_learning/core/enums/update_user.dart';
 import 'package:online_learning/features/auth/data/models/user_model.dart';
 
