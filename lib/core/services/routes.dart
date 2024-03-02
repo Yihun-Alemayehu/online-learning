@@ -17,7 +17,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
     default:
       return _pageRouteBuilder(
-        (_) => const PageUnderConstructionScreen(),
+        (_) =>  BlocProvider<OnBoardingCubit>(
+          create: (_) => sl<OnBoardingCubit>(),
+          child: const OnBoardingScreen(),
+        ),
         settings: settings,
       );
   }

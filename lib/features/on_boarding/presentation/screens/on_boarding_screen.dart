@@ -70,9 +70,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     effect: const WormEffect(
                       dotColor: Colors.white,
                       activeDotColor: Colours.primaryColour,
-                      dotHeight: 10,
-                      dotWidth: 10,
-                      spacing: 10,
+                      dotHeight: 15,
+                      dotWidth: 15,
+                      spacing: 20,
                       
                     ),
                   ),
