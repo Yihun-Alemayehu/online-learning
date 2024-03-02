@@ -9,7 +9,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case OnBoardingScreen.routeName:
       return _pageRouteBuilder(
-        (_) =>  BlocProvider(
+        (_) =>  BlocProvider<OnBoardingCubit>(
           create: (_) => sl<OnBoardingCubit>(),
           child: const OnBoardingScreen(),
         ),
