@@ -15,11 +15,11 @@ abstract class AuthRepository {
     required String password,
   });
 
-  ResultFuture<void> forgetPassword(String email);
+  ResultFuture<void> forgotPassword(String email);
 
   ResultFuture<void> updateUser({
     required UpdateUserAction action,
-    dynamic userData,
+    required dynamic userData,
   });
-  
+
 }
