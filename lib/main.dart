@@ -3,9 +3,12 @@ import 'package:online_learning/core/res/colors.dart';
 import 'package:online_learning/core/res/fonts.dart';
 import 'package:online_learning/core/services/injection_container.dart';
 import 'package:online_learning/core/services/routes.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await init();
   runApp(const MyApp());
 }
