@@ -1,4 +1,15 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
+import 'package:online_learning/features/auth/data/datasources/auth_remote_data_source.dart';
+import 'package:online_learning/features/auth/data/repositories/auth_repo_impl.dart';
+import 'package:online_learning/features/auth/domain/repositories/auth_repository.dart';
+import 'package:online_learning/features/auth/domain/usecases/forget_password_usecase.dart';
+import 'package:online_learning/features/auth/domain/usecases/sign_in_usecase.dart';
+import 'package:online_learning/features/auth/domain/usecases/sign_up_usecase.dart';
+import 'package:online_learning/features/auth/domain/usecases/update_user_usecase.dart';
+import 'package:online_learning/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:online_learning/features/on_boarding/data/datasources/onboarding_local_data_source.dart';
 import 'package:online_learning/features/on_boarding/data/repositories/onboarding_repository_impl.dart';
 import 'package:online_learning/features/on_boarding/domain/repositories/onboarding_repository.dart';
@@ -7,24 +18,4 @@ import 'package:online_learning/features/on_boarding/domain/usecases/check_if_us
 import 'package:online_learning/features/on_boarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-final sl = GetIt.instance;
-
-Future<void> init () async{
-  final prefs = await SharedPreferences.getInstance();
-  /// feature ==>> OnBoarding 
-    // logic staff
-    sl.registerFactory(() => OnBoardingCubit(cacheFirstTimer: sl(), checkIfUserFirstTimer: sl()));
-
-    // usecase staff
-    sl.registerLazySingleton(() => CacheFirstTimerUsecase(repository: sl()));
-    sl.registerLazySingleton(() => CheckIfUserFirstTimerUsecase(repository: sl()));
-
-    // repository staff
-    sl.registerLazySingleton<OnBoardingRepository>(() => OnBoardingRepositoryImpl(localDataSource: sl()));
-
-    // datasource staff
-    sl.registerLazySingleton<OnBoardingLocalDataSource>(() => OnBoardingLocalDataSourceImpl(prefs: sl()));
-
-    // External staff
-    sl.registerLazySingleton(() => prefs);
-}
+part 'injection_container_main.dart'; 
