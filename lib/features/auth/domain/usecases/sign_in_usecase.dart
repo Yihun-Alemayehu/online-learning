@@ -4,22 +4,22 @@ import 'package:online_learning/core/utils/typedef.dart';
 import 'package:online_learning/features/auth/domain/entities/user.dart';
 import 'package:online_learning/features/auth/domain/repositories/auth_repository.dart';
 
-class SignInUsecase extends UsecaseWithParams<MyUser, Params> {
+class SignInUsecase extends UsecaseWithParams<MyUser, SignInParams> {
   final AuthRepository _repository;
 
   SignInUsecase({required AuthRepository repository})
       : _repository = repository;
 
   @override
-  ResultFuture<MyUser> call(Params params) async =>
+  ResultFuture<MyUser> call(SignInParams params) async =>
       await _repository.signIn(email: params.email, password: params.password);
 }
 
-class Params extends Equatable {
+class SignInParams extends Equatable {
   final String email;
   final String password;
 
-  const Params({
+  const SignInParams({
     required this.email,
     required this.password,
   });
