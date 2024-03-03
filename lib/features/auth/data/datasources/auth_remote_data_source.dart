@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:js_interop';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -122,7 +121,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     required userData,
   }) async {
     try {
-      switch (UpdateUserAction) {
+      switch (action) {
         case UpdateUserAction.email:
           await _authClient.currentUser
               ?.verifyBeforeUpdateEmail(userData as String);
