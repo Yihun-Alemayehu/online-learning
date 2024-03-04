@@ -12,7 +12,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
 
-  static const routeName = '/';
+  // static const routeName = '/home';
 
   @override
   State<OnBoardingScreen> createState() => _OnBoardingScreenState();
@@ -37,7 +37,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             if (state is OnBoardingStatusState) {
               Navigator.pushReplacementNamed(context, '/home');
             } else if (state is UserCachedState) {
-              // push to appropriate screen
+              Navigator.pushReplacementNamed(context, '/');
             }
           },
           builder: (context, state) {
@@ -51,32 +51,32 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   controller: pageController,
                   children: [
                     OnBoardingBody(pageContent: PageContent.first()),
-                    OnBoardingBody(pageContent: PageContent.second()),
-                    OnBoardingBody(pageContent: PageContent.third()),
+                    // OnBoardingBody(pageContent: PageContent.second()),
+                    // OnBoardingBody(pageContent: PageContent.third()),
                   ],
                 ),
-                Align(
-                  alignment: const Alignment(0, 0.04),
-                  child: SmoothPageIndicator(
-                    controller: pageController,
-                    count: 3,
-                    onDotClicked: (index){
-                      pageController.animateToPage(
-                        index,
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    effect: const WormEffect(
-                      dotColor: Colors.white,
-                      activeDotColor: Colours.primaryColour,
-                      dotHeight: 15,
-                      dotWidth: 15,
-                      spacing: 20,
+                // Align(
+                //   alignment: const Alignment(0, 0.04),
+                //   child: SmoothPageIndicator(
+                //     controller: pageController,
+                //     count: 3,
+                //     onDotClicked: (index){
+                //       pageController.animateToPage(
+                //         index,
+                //         duration: const Duration(milliseconds: 500),
+                //         curve: Curves.easeInOut,
+                //       );
+                //     },
+                //     effect: const WormEffect(
+                //       dotColor: Colors.white,
+                //       activeDotColor: Colours.primaryColour,
+                //       dotHeight: 15,
+                //       dotWidth: 15,
+                //       spacing: 20,
                       
-                    ),
-                  ),
-                )
+                //     ),
+                //   ),
+                // )
               ],
             );
           },

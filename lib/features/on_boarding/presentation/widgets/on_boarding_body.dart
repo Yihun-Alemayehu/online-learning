@@ -58,6 +58,9 @@ class OnBoardingBody extends StatelessWidget {
                   ),
                   onPressed: () {
                     context.read<OnBoardingCubit>().cacheFirstTimer();
+                    debugPrint('--------------------------------------------------------');
+                    debugPrint('onPressed--------------------Pressed');
+                    debugPrint('--------------------------------------------------------');
                   },
                   child: const Text(
                     'Get Started',
