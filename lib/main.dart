@@ -13,6 +13,7 @@ import 'package:online_learning/features/dashboard/presentation/screens/dashboar
 import 'package:online_learning/features/on_boarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:online_learning/features/on_boarding/presentation/screens/on_boarding_screen.dart';
 import 'firebase_options.dart';
+import 'package:firebase_ui_auth/firebase_ui_auth.dart' as auth_ui;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
               create: (context) => sl<AuthBloc>(),
               child: const SignUpScreen(),
             ),
+        '/forgot-password': (context) => const auth_ui.ForgotPasswordScreen()
       },
     );
   }

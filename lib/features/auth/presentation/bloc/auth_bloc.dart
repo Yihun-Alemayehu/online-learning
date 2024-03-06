@@ -29,11 +29,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _signUpUsecase = signUpUsecase,
         _updateUserUsecase = updateUserUsecase,
         super(AuthInitial()) {
-    on<AuthEvent>(
-      (event, emit) {
-        emit(AuthLoadingState());
-      },
-    );
     on<SignInEvent>(_signInHandler);
     on<SignUpEvent>(_signUpHandler);
     on<ForgotPasswordEvent>(_forgotPasswordHandler);
@@ -44,6 +39,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     SignInEvent event,
     Emitter<AuthState> emit,
   ) async {
+    emit(AuthLoadingState());
     final result = await _signInUsecase.call(
       SignInParams(email: event.email, password: event.password),
     );
@@ -61,6 +57,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     SignUpEvent event,
     Emitter<AuthState> emit,
   ) async {
+    emit(AuthLoadingState());
     final result = await _signUpUsecase(
       SignUpParams(
           fullName: event.name, email: event.email, password: event.password),
@@ -76,6 +73,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     ForgotPasswordEvent event,
     Emitter<AuthState> emit,
   ) async {
+    emit(AuthLoadingState());
     final result = await _forgotPasswordUsecase(
       ForgotPasswordParams(email: event.email),
     );
@@ -94,6 +92,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     UpdateUserEvent event,
     Emitter<AuthState> emit,
   ) async {
+    emit(AuthLoadingState());
     final result = await _updateUserUsecase(
       UpdateUserParams(action: event.action, userData: event.userData),
     );
